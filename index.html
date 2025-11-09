@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José David Blandon Aguirre - Desarrollador Web Freelance | Páginas Web, Automatizaciones y Software</title>
+    <meta name="description" content="Desarrollador freelance especializado en páginas web modernas, automatizaciones inteligentes y software a medida. Transformo ideas en soluciones digitales que impulsan tu negocio.">
+    <meta name="keywords" content="desarrollador web, freelance, páginas web, automatizaciones, software a medida, José David Blandon">
+    <meta name="author" content="José David Blandon Aguirre">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="José David Blandon - Desarrollador Web Freelance">
+    <meta property="og:description" content="Especialista en páginas web modernas, automatizaciones y software personalizado. Soluciones digitales que transforman negocios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://josedaviddev.com">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="José David Blandon - Desarrollador Web Freelance">
+    <meta name="twitter:description" content="Páginas web modernas, automatizaciones y software a medida">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.462.0/lucide.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAqv7xYd46joogFjXu8smwoB9elvzWhS7I",
+      authDomain: "portafolio-b1b28.firebaseapp.com",
+      projectId: "portafolio-b1b28",
+      storageBucket: "portafolio-b1b28.firebasestorage.app",
+      messagingSenderId: "42221121575",
+      appId: "1:42221121575:web:52e13ecbb133e67a16de02",
+      measurementId: "G-W7XR8G52ZF"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+<body>
+    <!-- Navigation -->
+    <nav id="navigation" class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="logo.png" alt="José David Blandon Aguirre" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="gradient-text logo-fallback" style="display: none;">JD</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <a href="#hero" class="nav-link">Inicio</a>
+                    <a href="#services" class="nav-link">Servicios</a>
+                    <a href="#projects" class="nav-link">Proyectos</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">
+                        Trabajemos juntos
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="#hero" class="mobile-nav-link" onclick="closeMobileMenu()">Inicio</a>
+                <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Servicios</a>
+                <a href="#projects" class="mobile-nav-link" onclick="closeMobileMenu()">Proyectos</a>
+                <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contacto</a>
+                <button class="btn btn-primary mobile-btn" onclick="scrollToSection('#contact'); closeMobileMenu();">
+                    Trabajemos juntos
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1 class="hero-title">
+                        José David Blandon Aguirre
+                    </h1>
+                    <div class="hero-subtitle">
+                        Dev
+                    </div>
+                    <p class="hero-description">
+                        Desarrollador de software Freelance especializado en páginas web, 
+                        automatizaciones y soluciones digitales.
+                    </p>
+                </div>
+                
+                <div class="hero-buttons fade-in" style="animation-delay: 200ms;">
+                    <button class="btn btn-primary btn-large" onclick="scrollToSection('#contact')">
+                        Hablemos de tu proyecto
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="scrollToSection('#services')">
+                        Ver servicios
+                    </button>
+                </div>
+
+                <div class="hero-skills fade-in" style="animation-delay: 400ms;">
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Desarrollo Web fullstack</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Bases de datos</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Automatizaciones</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-dot"></div>
+                        <span>Software a medida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Servicios que <span class="gradient-text">transforman</span> tu negocio
+                </h2>
+                <p class="section-description">
+                    Ofrezco soluciones tecnológicas completas que impulsan el crecimiento 
+                    y la eficiencia de tu empresa
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <h3 class="service-title">Páginas Web Modernas</h3>
+                    <p class="service-description">
+                        Desarrollo de sitios web responsivos y atractivos para negocios y emprendedores. 
+                        Desde landing pages hasta plataformas completas.
+                    </p>
+                    <ul class="service-features">
+                        <li>Diseño responsive</li>
+                        <li>SEO optimizado</li>
+                        <li>Pasarelas de pago</li>
+                        <li>Fácil administración</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="service-title">Automatización de procesos repetitivos</h3>
+                    <p class="service-description">
+                        Optimizo procesos empresariales con automatizaciones que ahorran tiempo y reducen errores, 
+                        aumentando la productividad.
+                    </p>
+                    <ul class="service-features">
+                        <li>Procesos automáticos</li>
+                        <li>Integración APIs</li>
+                        <li>Notificaciones smart</li>
+                        <li>Reportes automatizados</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3 class="service-title">Software a Medida</h3>
+                    <p class="service-description">
+                        Desarrollo sistemas personalizados como inventarios, plataformas de monitoreo, 
+                        gestión escolar y soluciones empresariales.
+                    </p>
+                    <ul class="service-features">
+                        <li>Soluciones únicas</li>
+                        <li>Escalable</li>
+                        <li>Soporte incluido</li>
+                        <li>Capacitación del equipo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <!-- Benefits Stats -->
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">12+</div>
+                    <div class="benefit-label">Proyectos completados</div>
+                    <div class="benefit-description">Cada uno entregado a tiempo y superando expectativas</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">100%</div>
+                    <div class="benefit-label">Clientes satisfechos</div>
+                    <div class="benefit-description">Testimonios reales de transformación empresarial</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">2 años</div>
+                    <div class="benefit-label">De experiencia</div>
+                    <div class="benefit-description">Especializándome en soluciones tecnológicas y webs innovadoras</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">24/7</div>
+                    <div class="benefit-label">Soporte técnico</div>
+                    <div class="benefit-description">Mantenimiento y actualizaciones constantes</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">
+                    Lo que dicen mis <span class="gradient-text">clientes</span>
+                </h2>
+                <p class="section-description">
+                    Testimonios reales de empresarios que han transformado su negocio 
+                    con mis soluciones tecnológicas
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "José David transformó completamente mi negocio online. La página web que desarrolló 
+                        aumentó mis ventas en un 200% en los primeros 3 meses. Su atención al detalle es excepcional."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Roger Ospina</div>
+                        <div class="author-role">Propietario • Meryto Digital</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "El sistema de automatización que implementó nos ahorra más de 20 horas semanales en 
+                        procesos administrativos. ROI increíble y soporte técnico de primera."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Carlos Ramírez</div>
+                        <div class="author-role">Gerente de Operaciones • Industrias del Norte</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                        <i data-lucide="star" class="star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "La plataforma educativa que desarrolló facilitó enormemente la gestión de nuestros 500+ 
+                        estudiantes. Los padres y profesores están encantados con la funcionalidad."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Ana Patricia Soto</div>
+                        <div class="author-role">Directora Académica • Colegio San Miguel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Proyectos <span class="gradient-text">destacados</span>
+                </h2>
+                <p class="section-description">
+                    Cada proyecto refleja mi compromiso con la calidad, la innovación 
+                    y las necesidades específicas de mis clientes
+                </p>
+            </div>
+
+            <div class="projects-carousel-container">
+                <div class="projects-carousel" id="projectsCarousel">
+                    <!-- Slide 1: Proyectos 1-3 -->
+                    <div class="projects-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop" alt="E-commerce Moderno">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">E-commerce Moderno</h3>
+                                <p class="project-description">
+                                    Plataforma de ventas online con sistema de pagos integrado, inventario automatizado 
+                                    y panel administrativo completo.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Pagos seguros</span>
+                                    <span class="feature-tag">Inventario automático</span>
+                                    <span class="feature-tag">Panel administrativo</span>
+                                    <span class="feature-tag">SEO optimizado</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" alt="Sistema de Automatización">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Sistema de Automatización</h3>
+                                <p class="project-description">
+                                    Herramienta que automatiza procesos de facturación, envío de emails y generación 
+                                    de reportes para una empresa de servicios.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Ahorro de tiempo</span>
+                                    <span class="feature-tag">Menos errores</span>
+                                    <span class="feature-tag">Reportes automáticos</span>
+                                    <span class="feature-tag">Integración total</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop" alt="Plataforma Educativa">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Plataforma Educativa</h3>
+                                <p class="project-description">
+                                    Sistema de gestión escolar con módulos de estudiantes, profesores, calificaciones 
+                                    y comunicación con padres.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Gestión completa</span>
+                                    <span class="feature-tag">Comunicación directa</span>
+                                    <span class="feature-tag">Reportes visuales</span>
+                                    <span class="feature-tag">Fácil de usar</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Proyectos 4-6 -->
+                    <div class="projects-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop" alt="Sistema de Inventarios">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Sistema de Inventarios</h3>
+                                <p class="project-description">
+                                    Plataforma completa para gestión de inventarios con control de stock, 
+                                    alertas automáticas y reportes detallados.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Control de stock</span>
+                                    <span class="feature-tag">Alertas automáticas</span>
+                                    <span class="feature-tag">Reportes detallados</span>
+                                    <span class="feature-tag">Multi-sucursal</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=300&fit=crop" alt="App Móvil">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">App Móvil Empresarial</h3>
+                                <p class="project-description">
+                                    Aplicación móvil para gestión de empleados, seguimiento de tareas 
+                                    y comunicación interna de la empresa.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Gestión de empleados</span>
+                                    <span class="feature-tag">Seguimiento de tareas</span>
+                                    <span class="feature-tag">Comunicación interna</span>
+                                    <span class="feature-tag">Notificaciones push</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=300&fit=crop" alt="Dashboard Analytics">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Dashboard Analytics</h3>
+                                <p class="project-description">
+                                    Panel de control con métricas en tiempo real, gráficos interactivos 
+                                    y análisis de datos para toma de decisiones.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Tiempo real</span>
+                                    <span class="feature-tag">Gráficos interactivos</span>
+                                    <span class="feature-tag">Análisis de datos</span>
+                                    <span class="feature-tag">Exportación de reportes</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Proyectos 7-9 -->
+                    <div class="projects-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" alt="Sistema CRM">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Sistema CRM</h3>
+                                <p class="project-description">
+                                    Plataforma de gestión de relaciones con clientes que centraliza 
+                                    toda la información comercial y mejora las ventas.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Gestión de clientes</span>
+                                    <span class="feature-tag">Pipeline de ventas</span>
+                                    <span class="feature-tag">Seguimiento de leads</span>
+                                    <span class="feature-tag">Reportes comerciales</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop" alt="Portal de Empleados">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Portal de Empleados</h3>
+                                <p class="project-description">
+                                    Sistema web para gestión de recursos humanos con nómina, 
+                                    vacaciones, capacitaciones y comunicación interna.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Gestión de nómina</span>
+                                    <span class="feature-tag">Control de vacaciones</span>
+                                    <span class="feature-tag">Capacitaciones</span>
+                                    <span class="feature-tag">Comunicación interna</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=300&fit=crop" alt="Sistema de Reservas">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Sistema de Reservas</h3>
+                                <p class="project-description">
+                                    Plataforma para gestión de citas y reservas con calendario integrado, 
+                                    notificaciones automáticas y pagos online.
+                                </p>
+                                <div class="project-features">
+                                    <span class="feature-tag">Calendario integrado</span>
+                                    <span class="feature-tag">Notificaciones automáticas</span>
+                                    <span class="feature-tag">Pagos online</span>
+                                    <span class="feature-tag">Gestión de horarios</span>
+                                </div>
+                                <div class="project-buttons">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="info"></i>
+                                        Conocer más
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i data-lucide="message-square"></i>
+                                        Estoy interesado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="carousel-navigation">
+                    <button class="carousel-btn prev-btn" id="prevBtn">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button class="indicator active" data-slide="0"></button>
+                        <button class="indicator" data-slide="1"></button>
+                        <button class="indicator" data-slide="2"></button>
+                    </div>
+                    <button class="carousel-btn next-btn" id="nextBtn">
+                        <i data-lucide="chevron-right"></i>
+                </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    ¿Listo para <span class="gradient-text">transformar</span> tu negocio?
+                </h2>
+                <p class="section-description">
+                    Conversemos sobre tu proyecto. Te ayudo a encontrar la solución tecnológica 
+                    perfecta para hacer crecer tu empresa
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <h3 class="form-title">Cuéntame sobre tu proyecto</h3>
+                        <p class="form-description">
+                            Completa el formulario y te contactaré en menos de 24 horas
+                        </p>
+                    </div>
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input type="text" id="company" name="company" placeholder="Nombre de la empresa">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Describe tu proyecto</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Cuéntame qué necesitas: página web, automatización, sistema personalizado..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Methods -->
+                <div class="contact-methods">
+                    <div class="contact-methods-header">
+                        <h3 class="contact-methods-title">Otras formas de contacto</h3>
+                        <p class="contact-methods-description">
+                            Elige la opción que prefieras para comenzar nuestra conversación
+                        </p>
+                    </div>
+
+                    <div class="contact-methods-list">
+                        <div class="contact-method-card">
+                            <div class="contact-method-icon whatsapp">
+                                <i data-lucide="message-square"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4 class="contact-method-title">WhatsApp</h4>
+                                <p class="contact-method-description">Respuesta inmediata</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm" onclick="openWhatsApp()">
+                                Escribir ahora
+                            </button>
+                        </div>
+
+                        <div class="contact-method-card">
+                            <div class="contact-method-icon email">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4 class="contact-method-title">Email</h4>
+                                <p class="contact-method-description">jdblandondev@gmail.com</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm" onclick="openEmail()">
+                                Enviar email
+                            </button>
+                        </div>
+
+                        <div class="contact-method-card">
+                            <div class="contact-method-icon linkedin">
+                                <i data-lucide="linkedin"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4 class="contact-method-title">LinkedIn</h4>
+                                <p class="contact-method-description">Conectemos profesionalmente</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm" onclick="openLinkedIn()">
+                                Ver perfil
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-call-card">
+                        <div class="call-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <h4 class="call-title">¿Prefieres hablar directamente?</h4>
+                        <p class="call-description">
+                            Agenda una llamada gratuita de 30 minutos para discutir tu proyecto
+                        </p>
+                        <button class="btn btn-primary" onclick="openWhatsApp()">
+                            Agendar llamada
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="José David Blandon Aguirre" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="gradient-text footer-logo-fallback" style="display: none;">JD</span>
+                </div>
+                <p class="footer-text">
+                    Desarrollador freelance especializado en soluciones digitales que transforman negocios.
+                </p>
+                <div class="footer-links">
+                    <a href="#hero">Inicio</a>
+                    <a href="#services">Servicios</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 José David Blandon Aguirre. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <i data-lucide="message-square"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
