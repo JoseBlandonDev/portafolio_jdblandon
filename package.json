@@ -1,0 +1,21 @@
+{
+  "name": "portafolio-jdblandon",
+  "version": "1.0.0",
+  "description": "Portafolio de José David Blandon Aguirre",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "portafolio",
+    "desarrollador",
+    "freelance"
+  ],
+  "author": "José David Blandon Aguirre",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "dependencies": {}
+}
+

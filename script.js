@@ -62,7 +62,7 @@ function closeMobileMenu() {
 }
 
 // Contact form handling
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
     event.preventDefault();
     
     // Get form data
@@ -74,11 +74,42 @@ function handleFormSubmit(event) {
         message: formData.get('message')
     };
     
-    // Show success message
-    showNotification('Mensaje enviado', 'Gracias por tu interés. Te contactaré pronto.', 'success');
+    // Disable submit button to prevent double submissions
+    const submitButton = event.target.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
     
-    // Reset form
-    event.target.reset();
+    try {
+        // Send data to API endpoint
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+            // Show success message
+            showNotification('Mensaje enviado', 'Gracias por tu interés. Te contactaré pronto.', 'success');
+            
+            // Reset form
+            event.target.reset();
+        } else {
+            // Show error message
+            showNotification('Error', result.error || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.', 'error');
+        }
+    } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+        showNotification('Error', 'No se pudo conectar con el servidor. Por favor, intenta de nuevo más tarde.', 'error');
+    } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
 }
 
 // Notification system
@@ -120,6 +151,14 @@ function showNotification(title, message, type = 'info') {
             
             .notification-success {
                 border-left: 4px solid var(--accent);
+            }
+            
+            .notification-error {
+                border-left: 4px solid #ef4444;
+            }
+            
+            .notification-error .notification-title {
+                color: #ef4444;
             }
             
             .notification-content {
